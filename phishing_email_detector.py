@@ -1,8 +1,8 @@
 # FILE NAME - phishing_email_detector.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Mike Disorbo
+# DATE: 3-1-26
+# BRIEF DESCRIPTION: this code will help detect if an email might be a scam
 
 
 
@@ -15,7 +15,24 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
+subject = input("Enter the email subject line: ")
 
+print()
+print("SECURITY ASSESSMENT:")
+
+lower_subject = subject.lower()
+
+if "urgent" in lower_subject or "immediate action required" in lower_subject:
+    print("HIGH RISK: Possible phishing attempt.")
+elif "win" in lower_subject or "free" in lower_subject:
+    print("MEDIUM RISK: Suspicious offer detected.")
+elif "password reset" in lower_subject:
+    print("LOW RISK: Verify legitimacy with sender.")
+else:
+    print("No phishing indicators detected.")
+
+print("------------------------")
+print(f'Analyzed subject: "{subject}"')
 
 
 
